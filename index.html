@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Page Metadata-->
+  <meta charset="utf-8">
+  <title>Web Design Portfolio for Adam T. Smith | Atlanta, GA</title>
+  <meta name="description" content="Welcome to my Web Design Portfolio. My name is Adam Smith, a front end developer in Atlanta, GA.">
+  <meta name="author" content="Adam T. Smith">
+
+  <!-- Mobile Specific Meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="google-site-verification" content="_PeioFFb0N72p0vK787pm3Cmbr9SkPN6-f66X2rwR84" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+    
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="js/portfolio-app.js"></script>
+  <script src="js/d3.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/toggle.js"></script>
+  <script src="js/backgrounds.js"></script>
+  <script src="js/project-detail.js"></script>
+    
+</head>
+<body ng-app="portfolioApp">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TF5LWG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TF5LWG');</script>
+<!-- End Google Tag Manager -->
+ 
+  <nav>
+      <ul class="nav-list">
+          <li class="nav-item"><a href="#featured">Work</a></li>
+          <li class="nav-item"><a href="#development">Skills</a></li>
+          <li class="nav-item"><a href="#about">About</a></li>
+          <li class="nav-item"><a href="#resume">Resume</a></li>
+          <li class="nav-item"><a href="#contact">Contact</a></li>
+      </ul>
+  </nav>
+
+  <!-- Intro Header -->
+  <header id="featured">
+      <div class="container">
+        <h1>Welcome to my Web Design Portfolio</h1>
+        <p>I'm a fan of JavaScript, Responsive Design, CSS3 and Modern Web Apps built on the MEAN Stack. Check out some of my featured work along with an insightful data visualization of my skills below.</p>  
+        <p>Thanks for stopping by!</p>
+        <img class="signature" src="img/signature.png" /> 
+      </div>
+  </header>
+ 
+  <!-- Portfolio Featured Items -->
+    <section id="portfolio" class="row">
+      <div class="twelve columns">
+       <ul>
+            <li class="portfolio-thumb">
+               <!-- Inline block is whitespace Sensitive, Chain together list items to remove unwanted margin -->
+                <a href=""><img src="img/portfolio-ttww.jpg" alt=""></a>
+                <div class="container project-detail pullDown">
+                   <div class="four columns">
+                       <img class="project-detail-img" src="img/portfolio-detail-ttww.jpg" alt="Portrait of P.L. Gaus">
+                   </div>
+                   <div class="eight columns">
+                    <h2>Tellthewholeworld.org</h2>
+                    <p>This is a personal project of mine, with the goal of creating a Christian social network that enables people to share their testimonies of how God has worked in their lives.  This will be my first cross-platform web app built on Meteor.  Although this project is still in development, you can check out the landing page for early signups.</p> 
+                    <a class="button" href="http://www.tellthewholeworld.org" target="_blank">Visit the Site</a>
+                   </div>
+                </div>
+            </li><li class="portfolio-thumb">
+                <a href=""><img src="img/portfolio-wpxpress.jpg" alt=""></a>
+                <div class="container project-detail pullDown">
+                   <div class="eight columns">
+                    <h2>WPXpress Landing Page</h2>
+                    <p>Another personal project of mine, WPXpress, was created to offer an affordable website design service to small business owners on a small budget.  The concept is to quickly develop WordPress websites based on pre-existing templates from the Genesis framework.  This landing page was built in one week to test the market response.</p>
+                    <a class="button" href="http://www.wpxpress.co" target="_blank">Visit the Site</a>
+                   </div>
+                   <div class="four columns">
+                       <img class="project-detail-img" src="img/wpx-project-detail.jpg" alt="WPXpress">
+                   </div>
+                </div>
+            </li><li class="portfolio-thumb">
+                <a href=""><img src="img/portfolio-snacoms-home.jpg" alt=""></a>
+                <div class="container project-detail pullDown">
+                   <div class="eight columns">
+                    <h2>Snacoms Communications Firm</h2>
+                    <p>Snacoms is a firm that specializes in business intelligence and communications services, specifically for stakeholders.  If you keep your stakeholders happy, that's a good thing for everyone!  The site includes a multi-page onboarding survey written in PHP that sends the results to Snacoms and the user via email.</p>
+                    <a class="button" href="http://www.snacoms.com" target="_blank">Visit the Site</a>
+                   </div>
+                   <div class="four columns">
+                       <img class="project-detail-img" src="img/snacoms-detail.jpg" alt="Snacoms">
+                   </div>
+                </div>
+            </li><li class="portfolio-thumb">
+               <!-- Inline block is whitespace Sensitive, Chain together list items to remove unwanted margin -->
+                <a href=""><img src="img/portfolio-plgaus.jpg" alt=""></a>
+                <div class="container project-detail pullDown">
+                   <div class="four columns">
+                       <img class="project-detail-img" src="img/project-detail-gaus.jpg" alt="Portrait of P.L. Gaus">
+                   </div>
+                   <div class="eight columns">
+                    <h2>P.L. Gaus: Author of the Amish-Country Mysteries</h2>
+                    <p>I've had the pleasure of working with Paul to redesign his website from static HTML to WordPress.  Paul enjoys taking stunning photographs of the Ohio Countryside where the Amish reside, and has a loyal following on his new blog.  Be sure to check out the Amish-Country Mysteries book series!</p> 
+                    <a class="button" href="http://www.plgaus.com" target="_blank">Visit the Site</a>
+                   </div>
+                </div>
+            </li>
+       </ul>
+      </div>
+    </section>
+    
+  <!-- Calls to Action -->
+  <section id="cta" class="row">
+    <div class="container">
+       <div class="twelve columns">
+            <h2>Let's Work Together</h2>
+            <p>I am available for a Freelance Project or JavaScript Development Position.</p>
+            <a class="button-dark" href="#contact">Contact Me</a>
+        </div>
+    </div>
+  </section>
+      
+  <!-- Development Section -->
+  <div class="dev-container">
+    <section id="development" class="row">
+    <div class="container">
+      <div class="ten columns">
+        <h2>Development</h2>
+        <p>JavaScript was the first programming language I learned, and used on a regular basis in my work.  When I discovered Node.js and realized that I could create full stack applications in JavaScript very quickly, I fell in love.</p>
+        <p>Building apps on the MEAN stack has been an amazing journey that I will continue to enjoy.</p>
+        <p class="hidden-dev">Web development is my true calling in life, the skill that I enjoy most of all.  My obsession began with graphic design.  After spending years of teaching myself how to create print and web graphics, I developed a burning desire to take my static designs and bring them to life on the web.</p>
+        <p class="hidden-dev">I began learning basic HTML and CSS, and then diving into WordPress.</p>
+        <p class="hidden-dev">As my front-end game became stronger, I wanted to do more.  I wanted to build fully functional applications that people would enjoy using.  My desire evolved into learning about many different programming languages, methodologies, and web architecture before embracing Node.js based web apps.</p>
+        <p class="hidden-dev">I love developing on my Macbook Pro using Brackets and Adobe CC Suite.</p>
+        <a class="button toggle-dev">Learn More</a>
+      </div>
+    </div>
+    </section>
+  </div>
+  <section id="development-icons" class="row">
+    <div class="container">
+      <div class="twelve columns">
+        <h3>I Enjoy Using</h3>
+        <ul>
+            <li class="dev-logo"><img src="img/logos/node-light.png" /></li>
+            <li class="dev-logo"><img src="img/logos/express.png" /></li>
+            <li class="dev-logo"><img src="img/logos/angular.png" /></li>
+            <li class="dev-logo"><img src="img/logos/mongodb.png" /></li>
+            <li class="dev-logo"><img src="img/logos/wordpress.png" /></li>
+            <li class="dev-logo"><img src="img/logos/jquery.png" /></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+    
+  <!-- SEO Section -->
+  <div class="seo-container">
+    <section id="seo" class="row">
+    <div class="container">
+      <div class="ten columns">
+        <h2>SEO</h2>
+       <p>I approach SEO with a whitehat, modern marketing perspective.  Emphasis on local SEO, valuable content, social influence and user experience will ensure you are staying ahead of the curve.  Tracking and measuring your results is equally important for a successful campaign.</p>
+<p>The game is always changing, but the core rules remain consistent: Provide great content to your users and make it an enjoyable, shareable experience.</p>
+        <p class="hidden-seo">I was drawn to SEO for optimizing my client’s WordPress sites, not realizing the vast amount of knowledge I would acquire.  I obsessively studied every credible source and began implementing best SEO practices on my own websites, and eventually for my client’s websites as well.  </p>
+        <p class="hidden-seo">Vigorously exploring the subjects of Keyword Research, Technical Code Optimization, and Link Acquisition laid a solid foundation for my SEO education.</p>
+        <p class="hidden-seo">After one year of learning and practicing, I decided to pursue an SEO Specialist position at BKV, Inc. - an Atlanta advertising agency.  Greg Lee, the Director of SEO is a 10+ year veteran in the industry, and I greatly benefited from his experience and in-depth knowledge on many different SEO strategies and techniques.</p>
+        <p class="hidden-seo">I have had the opportunity to work with SEO clients such as Children's International, DS Services, and AgencyFinder.</p>
+        <a class="button toggle-seo">Learn More</a>
+      </div>
+    </div>
+    </section>
+  </div>
+  <section id="seo-icons" class="row">
+    <div class="container">
+      <div class="twelve columns">
+        <h3>I have performed SEO for</h3>
+        <ul>
+            <li class="seo-logo"><img src="img/logos/ds-services.png" /></li>
+            <li class="seo-logo"><img src="img/logos/crystal-springs.png" /></li>
+            <li class="seo-logo"><img src="img/logos/children-international.png" /></li>
+            <li class="seo-logo"><img src="img/logos/agencyfinder.png" /></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+    
+  <!-- Data Analysis Section -->
+  <section id="data" class="row">
+    <div class="container">
+      <div class="ten columns">
+        <h2>Data</h2>
+        <p>I was introduced to the wonderful world of Data Analysis and Visualization by another BKV superstar, Jerelle Gainey.  I became intent on helping to redesign our client facing reports, which proved to be valuable for the agency.  I was promoted as a Data Analyst to pursue the project full-time.</p>
+        <p>My main objectives were to improve the reporting experience for our clients, improve the way data was structured in the reports, and create insightful data visualizations to reveal the story behind the numbers.</p>
+        <p class="hidden-data">This taught me a lot about web analytics, advertising metrics, and tracking code implementation options using Tag Management solutions.</p>
+        <p class="hidden-data">I became very experienced in pushing Excel to the limits - dynamic date range selections, complex dropdown tables, and automatic updating of chart dashboards.</p>
+        <p class="hidden-data">I have worked with clients like Hubzu, Delta Community Credit Union, March of Dimes, Southern Company, Decluttr and Young Harris College to name a few.</p>
+        <p class="hidden-data">I kick ass with Google Analytics, Google Tag Manager, and Excel.</p>
+        <a class="button toggle-data">Learn More</a>
+      </div>
+    </div>
+    <div class="data-graph"></div>
+  </section>
+  <section id="data-icons" class="row">
+    <div class="container">
+      <div class="twelve columns">
+        <h3>I have provided Data Services for</h3>
+        <ul>
+            <li class="data-logo"><img src="img/logos/hubzu.png" /></li>
+            <li class="data-logo"><img src="img/logos/dell-secureworks.png" /></li>
+            <li class="data-logo"><img src="img/logos/decluttr.png" /></li>
+            <li class="data-logo"><img src="img/logos/march-of-dimes.png" /></li>
+            <li class="data-logo"><img src="img/logos/delta-community.png" /></li>
+            <li class="data-logo"><img src="img/logos/floor-decor.png" /></li>
+            <li class="data-logo"><img src="img/logos/southern-company.png" /></li>
+            <li class="data-logo"><img src="img/logos/YHC.png" /></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Skills Chart & Details Sections -->
+  <section id="skills" class="row">
+    <div class="container">
+      <div class="twelve columns">
+        <h2>Explore My Skills</h2>
+        <h4 id="chart-title"></h4>
+        <div id="skills-chart"></div>
+      </div>
+    </div>
+  </section>
+    
+  <section id="skills-details" class="row hidden-skills-details">
+    <div class="container">
+      <div class="twelve columns">
+<!--        <h3 id="skills-details-title"></h3>-->
+        <div id="skills-details-content">
+            <table class="u-full-width">
+              <thead>
+                <tr>
+                  <th id="skills-details-title"></th>
+                  <th>Score Out of 5</th>
+                </tr>
+              </thead>
+              <tbody id="skills-details-table"></tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+  <!-- About Me Section -->
+  <section id="about" class="row">
+    <div class="container">
+      <div class="nine columns">
+        <h2>About Me</h2>
+        <p>I’m Adam - a self taught developer and front-end designer from Atlanta.  I have been designing and building stuff since 2011.  After learning graphic design to create logos and t-shirt prints, my attention turned to web design and I never stopped learning.  I initially wanted to take my designs and bring them to life, but something unexpected happened: Programming became my new love.</p>
+
+        <p>I began designing WordPress websites and logos for small businesses for a few years before stumbling upon an opportunity at BKV, an advertising agency here in Atlanta.  After about 2 years of working as an SEO Specialist and Data Analyst for BKV, I decided to pursue an entrepreneurial venture unrelated to my love for technology.  Although successful, I knew that my talents were not being put to good use.  I realized that doing what I love is more important than the money.</p>
+        <h3>What Motivates Me?</h3>
+        <p>I am naturally curious, with an insatiable thirst for knowledge.  When I figure out how something works, I will try to push it to the limit until I find a better solution.  With JavaScript development, there are seemingly infinite frameworks which is very exciting for me.  I enjoy learning new things and thinking about how to leverage them in creative ways.</p>
+
+      </div>
+      <div class="three columns">
+        <h3>My Objective</h3>
+        <p>I am looking to work with a forward-thinking company or startup, creating something of value for the world.</p>
+        <p>I believe that my previous experience in Graphic Design, SEO and Data Analysis will give me a unique edge as a full-stack JavaScript Developer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Download Call to Action -->
+  <section id="resume" class="row">
+    <div class="container">
+      <div class="twelve columns">
+        <h2>View My Resume</h2>
+        <p>My resume includes a summary of my skills, employment history, education and references.</p>
+        <a class="button-dark" href="pdf/adam-smith-resume.pdf">Check Out My Resume</a>
+      </div>
+    </div>
+  </section>
+      
+  <!-- Contact Section -->
+  <section id="contact" class="row" ng-controller="formController">
+    <div class="container">
+      <div class="twelve columns">
+        <h2>Contact Me</h2>
+        <!-- The form uses AngularJS for Validation, and HTML5 Validation fallback when JavaScript is disabled. 
+             jQuery adds novalidate to the form tag if JavaScript is enabled.
+             method="post" action="contact.php" should be visible in form tag if JS is disabled.
+             
+             Our submit function handles validation logic, We DO NOT use ng-disabled because then we can't tie logic to click events on a disabled element. ng-submit executes one function:  If the form is invalid, it will display the error messages for the invalid fields.  If the form is valid, the form is sent.
+        -->
+        <form name="contactForm" ng-submit="submitForm()">
+          <div class="row">
+            <div class="six columns">
+                <label for="exampleNameInput">Your Name</label>
+                <input class="u-full-width" type="text" placeholder="John Doe" id="name" name="name"
+                    ng-model="formData.name" required>
+            </div>
+            <div class="six columns">
+                <label for="examplePhoneInput">Phone Number</label>
+                <input class="u-full-width" type="text" placeholder="770-654-7890" id="phone" name="phone"
+                    ng-model="formData.phone" required>
+            </div>
+            </div>
+            <div class="row">
+            <div class="six columns">
+                <label for="exampleEmailInput">Your Email</label>
+                <input class="u-full-width" type="email" placeholder="john@gmail.com" id="email" name="email"
+                    ng-model="formData.email" required>
+            </div>
+            <div class="six columns">
+                <label for="exampleRecipientInput">Reason for Contacting</label>
+                <select class="u-full-width" id="reason" name="reason" 
+                    ng-model="formData.reason" required>
+                    <option value="" disabled selected>Choose Reason..</option>
+                    <option value="Development Position">Development Position</option>
+                    <option value="Freelance Work">Freelance Work</option>
+                    <option value="Questions">Questions</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+          </div>
+            <label for="exampleMessage">Message</label>
+            <textarea class="u-full-width" placeholder="Hi Adam …" id="message" name="message" 
+                    ng-model="formData.message"></textarea>
+            
+          <div id="form-messages">
+            <p class="error validationerror" ng-show="contactForm.name.$invalid && contactForm.name.$touched">
+                  Please enter your name!</p>
+            <p class="error validationerror" ng-show="contactForm.phone.$invalid && contactForm.phone.$touched">
+                  Please enter a valid phone number!</p>
+            <p class="error validationerror" ng-show="contactForm.email.$invalid && contactForm.email.$touched">
+                  Please enter a valid email!</p>
+            <p class="error validationerror" ng-show="contactForm.reason.$invalid && contactForm.reason.$touched">
+                  Please choose a reason for contacting me!</p>
+            <p class="success" ng-bind="submissionMessage" ng-show="contactForm.$submitted && contactForm.$pristine"></p>
+          </div>
+
+          <input class="button-primary" type="submit" value="submit">
+        </form>
+<!--
+        <div class="debugging">
+          <p>Form is valid? {{ contactForm.$valid }}</p>
+          <p>Name: {{ formData.name }} valid? {{ contactForm.name.$valid }}</p>
+          <p>Email: {{ formData.email }} valid? {{ contactForm.email.$valid }}</p>
+          <p>Reason: {{ formData.reason }} valid? {{ contactForm.reason.$valid }}</p>
+          <p>Phone: {{ formData.phone }} valid? {{ contactForm.phone.$valid }}</p>
+          <p>Message: {{ formData.message }} valid? {{ contactForm.message.$valid }}</p>
+            <hr>
+          <p>Form Valid-Email? {{ contactForm.$valid-email }}</p>
+          <p>Form Invalid-Required? {{ contactForm.$invalid-required }}</p>
+          <p>Form Pristine? {{ contactForm.$pristine }}</p>
+          <p>Form Dirty? {{ contactForm.$dirty }}</p>
+          <p>Form Valid? {{ contactForm.$valid }}</p>
+        </div>
+-->
+      </div>
+    </div>
+  </section>
+<script src="js/skills-chart.js"></script>
+</body>
+</html>
