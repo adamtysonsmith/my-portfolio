@@ -15,7 +15,7 @@
             }
 
             return returnString.slice(0, returnString.length - 1);
-        } 
+        }
         
         // Sets all fields to touched and dirty if submit is clicked without filling out all required fields.
         $scope.submitForm = function() {
@@ -29,7 +29,7 @@
                 $scope.contactForm.email.$setDirty();
                 $scope.contactForm.phone.$setDirty();
                 $scope.contactForm.reason.$setDirty();
-            } else /* Form input is valid on submit */ {
+            } else {
                 $http({
                     method: 'POST',
                     url: 'contact.php',
@@ -38,7 +38,7 @@
                 })
                 .success(function() {
                     $scope.submissionMessage = 'Thank you for contacting me! I will get back to you ASAP.';
-                    $scope.formData = null; ]
+                    $scope.formData = null;
                     $scope.contactForm.$setPristine();
                     $scope.contactForm.$setUntouched();
                     $scope.contactForm.$setSubmitted();
@@ -47,9 +47,7 @@
                     $scope.submissionMessage = 'Sorry, an error occured. Please email me directly at adam@adamtsmith.info';
                     console.log(error);
                 });
-            }
-        } // End Submit Handler
-
+            } // End Else
+        } // End Form Submit
     }); // End Form Controller
-
 })(); // End Closure
