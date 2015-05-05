@@ -5,7 +5,7 @@
 //  II.  Configuration & Setup                                                //
 //  III. Visualization Functions                                              //
 //  IV.  Table Creation Function                                              //
-//  V.   Event Listeners for Navigating                                       //
+//  V.   Control Flow for Navigating                                          //
 //                                                                            //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -591,16 +591,6 @@ function shiftBubbles() {
 }
 
 function transformChart() {
-    
-    // Not implementing a chart title, just using the small bubbles
-    // Update the Chart Title
-//    function updateTitle() {
-//        if (location.hash === '#Data'||'#Design'||'#Development'||'#SEO') {
-//            d3.select('#chart-title').text(location.hash.slice(1) + ' Skills');
-//        } else {
-//            d3.select('#chart-title').text('');
-//        }
-//    }
     
     // Remove all the large text and big bubbles
     bigBubblesText.remove();
