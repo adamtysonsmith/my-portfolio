@@ -437,6 +437,9 @@ header p {
 /* --------------------------------------------------- */
 /* Styles for D3 Chart */
 /* --------------------------------------------------- */
+#skills-chart {
+  width: 85%;
+}
 .domain {
   fill: none;
   stroke: #083d3f;
@@ -475,6 +478,9 @@ header p {
   .project-detail-img {
     display: none;
   }
+  #skills-chart {
+    width: 100%;
+  }
   .dev-logo,
   .seo-logo,
   .data-logo {
@@ -495,6 +501,9 @@ header p {
   #portfolio {
     -webkit-clip-path: none;
     clip-path: none;
+  }
+  #skills-chart {
+    width: 100%;
   }
   .dev-logo,
   .seo-logo {

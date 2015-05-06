@@ -446,7 +446,7 @@ var skillData = { Data:
             topicScore: 8 },
           { topicName: 'Utilizing Automated Services', topicScore: 6 } ] },
      { category: 'SEO',
-       skillName: 'Conversion Optimization',
+       skillName: 'CR Optimization',
        skillScore: 6,
        topics: 
         [ { topicName: 'A/B & Multivariate Testing', topicScore: 2 },
@@ -475,12 +475,19 @@ var sortedData = categoryData.children.sort(function(a, b) {
 //////////////////////////////////////////////////
 // II. Configuration & Setup                    //
 //////////////////////////////////////////////////
-var width = 720;
-var height = 450;
-
+if ($(window).width() < 550) {
+    var width = 600;
+    var height = 800;
+} else {
+    var width = 720;
+    var height = 450;
+}
+    
 var visualization = d3.select('#skills-chart').append('svg')
-    .attr('width', width)
-    .attr('height', height);
+    .attr('width', '100%')
+    .attr('height', '100%')
+    .attr('viewBox', '0 0 ' + width + ' ' + height)
+    .attr('preserveAspectRatio','xMidYMid');
 
 var packLayout = d3.layout.pack()
     .size([width, height])
@@ -502,15 +509,13 @@ var bubbleData = visualization.selectAll('circle')
 // Set the font size based on data value
 var fontSize = function(d) {
     if (d.size > 20) {
-        return 16;   
+        return 15;   
     } else if (d.size > 10) {
         return 14;
     } else {
         return 12;
     }
 }
-
-
 
 //////////////////////////////////////////////////
 // III. Visualization Functions                 //
@@ -622,11 +627,56 @@ function transformChart() {
             });
     
     // Adjust the Small Bubble Positioning
-    d3.select('.small-bubble-SEO').transition().attr('cy', '35').duration(1000).ease('elastic');
-    d3.select('.small-bubble-Design').transition().attr('cy', '115').duration(1000).ease('elastic');
-    d3.select('.small-bubble-Data').transition().attr('cy', '220').duration(1000).ease('elastic');
-    d3.select('.small-bubble-Development').attr('r', '60').transition()
-        .attr('cy', '340').duration(1000).ease('elastic');
+    var smallBubbleY = 700;
+    
+    if ($(window).width() < 550) {
+    // Positioning for Mobile
+    d3.select('.small-bubble-Development')
+        .attr('r', '80')
+        .transition()
+        .attr('cy', smallBubbleY)
+        .attr('cx', '100')
+        .duration(1000)
+        .ease('elastic');
+    d3.select('.small-bubble-Data').transition()
+        .attr('r', '70')
+        .attr('cy', smallBubbleY)
+        .attr('cx','270')
+        .duration(1000)
+        .ease('elastic');
+    d3.select('.small-bubble-Design').transition()
+        .attr('r', '60')
+        .attr('cy', smallBubbleY)
+        .attr('cx','420')
+        .duration(1000)
+        .ease('elastic');
+    d3.select('.small-bubble-SEO').transition()
+        .attr('r', '40')
+        .attr('cy', smallBubbleY)
+        .attr('cx','540')
+        .duration(1000)
+        .ease('elastic');
+    } else {
+    // Positioning for Tablet and Desktop
+    d3.select('.small-bubble-SEO').transition()
+        .attr('cy', '35')
+        .duration(1000)
+        .ease('elastic');
+    d3.select('.small-bubble-Design').transition()
+        .attr('cy', '115')
+        .duration(1000)
+        .ease('elastic');
+    d3.select('.small-bubble-Data').transition()
+        .attr('cy', '220')
+        .duration(1000)
+        .ease('elastic');
+    d3.select('.small-bubble-Development')
+        .attr('r', '60')
+        .transition()
+        .attr('cy', '340')
+        .duration(1000)
+        .ease('elastic');
+    }
     
     // Draw the small bubble text
     var smallBubbleText = visualization.selectAll('text')
@@ -642,14 +692,50 @@ function transformChart() {
             .attr('fill','white')
             .attr('text-anchor','middle')
             .attr('font-family','helvetica')
-            .attr('font-size', 11);
+            .attr('font-size', fontSize);
     
     // Adjust the Small Bubble Text Positioning
-    d3.select('.small-bubble-text-SEO').transition().attr('y', '37').duration(1000).ease('elastic');
-    d3.select('.small-bubble-text-Design').transition().attr('y', '117').duration(1000).ease('elastic');
-    d3.select('.small-bubble-text-Data').transition().attr('y', '222').duration(1000).ease('elastic');
+    if ($(window).width() < 550) {
+    // Positioning for Mobile
     d3.select('.small-bubble-text-Development').transition()
-        .attr('y', '342').duration(1000).ease('elastic');
+        .attr('y', smallBubbleY)
+        .attr('x', '100')
+        .duration(1000)
+        .ease('elastic');
+    d3.select('.small-bubble-text-Data').transition()
+        .attr('y', smallBubbleY)
+        .attr('x', '270')
+        .duration(1000)
+        .ease('elastic');
+    d3.select('.small-bubble-text-Design').transition()
+        .attr('y', smallBubbleY)
+        .attr('x', '420')
+        .duration(1000)
+        .ease('elastic');
+    d3.select('.small-bubble-text-SEO').transition()
+        .attr('y', smallBubbleY)
+        .attr('x', '540')
+        .duration(1000)
+        .ease('elastic');
+    } else {
+    // Positioning for Tablet and Desktop
+    d3.select('.small-bubble-text-SEO').transition()
+        .attr('y', '37')
+        .duration(1000)
+        .ease('elastic');
+    d3.select('.small-bubble-text-Design').transition()
+        .attr('y', '117')
+        .duration(1000)
+        .ease('elastic');
+    d3.select('.small-bubble-text-Data').transition()
+        .attr('y', '222')
+        .duration(1000)
+        .ease('elastic');
+    d3.select('.small-bubble-text-Development').transition()
+        .attr('y', '342')
+        .duration(1000)
+        .ease('elastic');
+    }
     
     // Call the Bar Chart to instantiate
     setTimeout(function() {
@@ -680,10 +766,16 @@ function drawBarChart() {
 
 
     // Use the margin convention
-    var margin = {top: 35, right: 35, bottom: 100, left: 310};
-    var backgroundHeight = height - margin.top - margin.bottom;
-    var backgroundWidth = width - margin.left - margin.right;
-
+    if ($(window).width() < 550) {
+        var margin = {top: 0, right: 50, bottom: 250, left: 160};
+        var backgroundHeight = height - margin.top - margin.bottom;
+        var backgroundWidth = width - margin.left - margin.right;
+    } else {
+        var margin = {top: 25, right: 35, bottom: 80, left: 310};
+        var backgroundHeight = height - margin.top - margin.bottom;
+        var backgroundWidth = width - margin.left - margin.right; 
+    }
+    
     // Use to set bar width based on each data value (horizontal bar)
     var barWidth = function(data) {
         return xScaleLinear(data.skillScore);
@@ -771,16 +863,29 @@ function drawBarChart() {
 
 
     // Style the Axes Text
-    d3.selectAll('#chart-y-axis > .tick > text')
-        .attr('font-weight', 'lighter')
-        .attr('font-family', 'Helvetica')
-        .attr('font-size', 12);
+    if ($(window).width() < 550) {
+        d3.selectAll('#chart-y-axis > .tick > text')
+            .attr('font-weight', 'lighter')
+            .attr('font-family', 'Helvetica')
+            .attr('font-size', 15);
 
-    d3.selectAll('#chart-x-axis > .tick > text')
-        .attr('font-weight', 'lighter')
-        .attr('font-family', 'Helvetica')
-        .attr('font-size', 12);
+        d3.selectAll('#chart-x-axis > .tick > text')
+            .attr('font-weight', 'lighter')
+            .attr('font-family', 'Helvetica')
+            .attr('font-size', 15);
+    } else {
+        d3.selectAll('#chart-y-axis > .tick > text')
+            .attr('font-weight', 'lighter')
+            .attr('font-family', 'Helvetica')
+            .attr('font-size', 13);
 
+        d3.selectAll('#chart-x-axis > .tick > text')
+            .attr('font-weight', 'lighter')
+            .attr('font-family', 'Helvetica')
+            .attr('font-size', 13);   
+    }
+    
+    
     horizontalBarChart.transition()
         .attr('width', barWidth)
         .delay(function(d, i) {
