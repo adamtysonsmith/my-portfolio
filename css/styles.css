@@ -9,6 +9,12 @@
 body {
   background-color: #eafde6;
 }
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
 /* --------------------------------------------------- */
 /* Buttons and Links */
 /* --------------------------------------------------- */
@@ -448,6 +454,16 @@ header p {
 .tick {
   stroke: #083d3f;
   stroke-width: 1;
+}
+/* --------------------------------------------------- */
+/* Styles for About Section */
+/* --------------------------------------------------- */
+.portrait {
+    width: 60%;
+    border-radius: 100%;
+}
+.social-icon:hover {
+    opacity: 0.8;
 }
 /* --------------------------------------------------- */
 /* Media Queries */
