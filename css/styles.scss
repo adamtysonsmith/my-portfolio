@@ -342,6 +342,10 @@ header {
   background-color: $blue_gray;
 }
 
+#portfolio-goodwifi {
+  background-color: darken($sky_blue, 5%);
+}
+
 #portfolio-portfolio {
   background-color: $sky_blue;
 }
@@ -624,6 +628,10 @@ header {
   width: 100%;
 }
 
+.portfolio-sm {
+  width: 100%;
+}
+
 .portfolio-link {
   font-size: 1.8rem;
   margin-bottom: 22px;
@@ -646,6 +654,10 @@ header {
 .github-link {
   font-size: 18px;
   
+}
+
+.gw-screenshots {
+  margin-bottom: 30px;
 }
 /* --------------------------------------------------- */
 /* Media Queries */

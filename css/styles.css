@@ -257,6 +257,9 @@ header {
 #portfolio-jade2html {
   background-color: #86cbdd; }
 
+#portfolio-goodwifi {
+  background-color: #5dddff; }
+
 #portfolio-portfolio {
   background-color: #77e2ff; }
 
@@ -504,6 +507,9 @@ header {
 .portfolio-lg {
   width: 100%; }
 
+.portfolio-sm {
+  width: 100%; }
+
 .portfolio-link {
   font-size: 1.8rem;
   margin-bottom: 22px; }
@@ -520,6 +526,9 @@ header {
 
 .github-link {
   font-size: 18px; }
+
+.gw-screenshots {
+  margin-bottom: 30px; }
 
 /* --------------------------------------------------- */
 /* Media Queries */

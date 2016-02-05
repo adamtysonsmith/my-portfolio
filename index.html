@@ -58,66 +58,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
   </header>
  
-  <!-- Portfolio Featured Items -->
-<!--
-    <section id="portfolio" class="row">
-      <div class="twelve columns">
-       <ul>
-            <li class="portfolio-thumb">
-                Inline block is whitespace Sensitive, Chain together list items to remove unwanted margin 
-                <a href=""><img src="img/portfolio-ttww.jpg" alt=""></a>
-                <div class="container project-detail pullDown">
-                   <div class="four columns">
-                       <img class="project-detail-img" src="img/portfolio-detail-ttww.jpg" alt="Portrait of P.L. Gaus">
-                   </div>
-                   <div class="eight columns">
-                    <h2>Tellthewholeworld.org</h2>
-                    <p>This is a personal project of mine, with the goal of creating a Christian social network that enables people to share their testimonies of how God has worked in their lives.  This will be my first cross-platform web app built on Meteor.  Although this project is still in development, you can check out the landing page for early signups.</p> 
-                    <a class="button" href="http://www.tellthewholeworld.org" target="_blank">Visit the Site</a>
-                   </div>
-                </div>
-            </li><li class="portfolio-thumb">
-                <a href=""><img src="img/portfolio-spearhead.jpg" alt=""></a>
-                <div class="container project-detail pullDown">
-                   <div class="eight columns">
-                    <h2>Spearhead Project Management</h2>
-                    <p>Spearhead is a simple, personal project management app designed to help you get projects finished on time.  I needed an app that would make it easier to accurately estimate project deadlines without overlapping projects, or underestimating the workload.  I decided to create a methodology and application to solve this problem, and Spearhead was born.  This project is still in development, however I can provide you with a login if you are interested in seeing the progress!</p>
-                    <a class="button" href="http://www.spearhead.cc" target="_blank">Visit the Site</a>
-                   </div>
-                   <div class="four columns">
-                       <img class="project-detail-img" src="img/spearhead-detail.jpg" alt="WPXpress">
-                   </div>
-                </div>
-            </li><li class="portfolio-thumb">
-                <a href=""><img src="img/portfolio-snacoms-home.jpg" alt=""></a>
-                <div class="container project-detail pullDown">
-                   <div class="eight columns">
-                    <h2>Snacoms Communications Firm</h2>
-                    <p>Snacoms is a firm that specializes in business intelligence and communications services, specifically for stakeholders.  If you keep your stakeholders happy, that's a good thing for everyone!  The site includes a multi-page onboarding survey written in PHP that sends the results to Snacoms and the user via email.</p>
-                    <a class="button" href="http://www.snacoms.com" target="_blank">Visit the Site</a>
-                   </div>
-                   <div class="four columns">
-                       <img class="project-detail-img" src="img/snacoms-detail.jpg" alt="Snacoms">
-                   </div>
-                </div>
-            </li><li class="portfolio-thumb">
-                <a href=""><img src="img/portfolio-wpxpress.jpg" alt=""></a>
-                <div class="container project-detail pullDown">
-                   <div class="eight columns">
-                    <h2>WPXpress Landing Page</h2>
-                    <p>Another personal project of mine, WPXpress, was created to offer an affordable website design service to small business owners on a small budget.  The concept is to quickly develop WordPress websites based on pre-existing templates from the Genesis framework.  This landing page was built in one week to test the market response.</p>
-                    <a class="button" href="http://www.wpxpress.co" target="_blank">Visit the Site</a>
-                   </div>
-                   <div class="four columns">
-                       <img class="project-detail-img" src="img/wpx-project-detail.jpg" alt="WPXpress">
-                   </div>
-                </div>
-            </li>
-       </ul>
-      </div>
-    </section>
--->
-  
    <!-- Portfolio Sections -->
   <section id="portfolio-spearhead" class="row">
     <div class="container">
@@ -160,7 +100,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <a class="button" href="https://github.com/adamtysonsmith/jade2html" target="_blank">jade2html</a>
     </div>
   </section>
-  
+
+  <section id="portfolio-goodwifi" class="row">
+    <div class="container">  
+      <h2>Goodwifi</h2>
+      <h3>Life is too short for poor quality wifi, find the good wifi near you!</h3>
+      
+      <span class="badge-blue3">Ionic</span>
+      <span class="badge-green2">AngularJS</span>
+      <span class="badge-blue1">Raspberry Pi</span>
+      <span class="badge-blue2">D3.js</span>
+      <span class="badge-blue2">Node.js</span>
+      
+      <p>The idea for Goodwifi came from my good friend <a href="http://truckfondue.com" target="_blank">Alex Moore</a>. He identified a real problem that most of us deal with at some point - You want to sit down at a cafe or restuarant to get some work done, and the wifi sucks!</p>
+      
+      <p>We decided to run Node.js on a Raspberry Pi, which connects to the cafe's wifi network.  We wrote a simple application that tests the network speeds on the wifi, and sends the data hourly to a MongoDB instance in the cloud.</p>
+      
+      <p>In order for consumers to check the wifi at their favorite locations, we wrote an iOS app using the Ionic Framework.  The app allows you to browse the locations (that are using the Goodwifi hardware) and view the networks speeds using some D3 charts.  We have some additional metrics that we collect in order to calculate a "Wifi Quality Score" which is also displayed and updated each hour.  This should allow you to see the history of the wifi performance over time, or which times of day are optimal for wifi use.  You can save your favorite locations to pull up anytime you want to check the wifi.</p>
+      
+      <p>This project is currently in the prototyping phase, but we hope to work out the business details and start testing wifi locations in Boulder by the end of the year.</p>
+      
+      <p class="bold">App Screenshots:<p>
+      <div class="row gw-screenshots">
+        <div class="one-third column">
+          <img class="portfolio-sm" src="img/goodwifi/gw-locations.png" alt="Goodwifi Locations">
+        </div>
+        <div class="one-third column">
+          <img class="portfolio-sm" src="img/goodwifi/gw-search.png" alt="Goodwifi Location Search">
+        </div>
+        <div class="one-third column">
+          <img class="portfolio-sm" src="img/goodwifi/gw-details.png" alt="Goodwifi Location Search">
+        </div>
+      </div>
+      
+      <div class="row gw-screenshots">
+        <div class="one-third column">
+          <img class="portfolio-sm" src="img/goodwifi/gw-network.png" alt="Goodwifi Locations">
+        </div>
+        <div class="one-third column">
+          <img class="portfolio-sm" src="img/goodwifi/gw-favorites.png" alt="Goodwifi Location Search">
+        </div>
+      </div>
+
+    </div>
+  </section>
+ 
   <section id="portfolio-portfolio" class="row">
     <div class="container">  
       <h2>My Portfolio</h2>
@@ -168,6 +152,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <span class="badge-blue1">AngularJS</span>
       <p>A portfolio that features itself, what? I decided it would be worth mentioning some of the technology used in this very website that you behold in your browser.  If you scroll below you will find a D3 visualization that allows you to explore some of my skills.  Click on each bubble to bring up an animated bar chart, representing my estimated skill levels for each topic.  If you click into one of the bars, a detailed list of these skills will appear below.  I thought this would be a good way to display some of my strengths and areas that I can improve, for both employers and personally to keep track of my learning progress.**</p>
       <i>** Skills Last Updated May 2015</i>
+      
+      <p class="bold">Check it out on Github:<p>
+      <a class="button" href="https://github.com/adamtysonsmith/my-portfolio" target="_blank">My Portfolio</a>
     </div>
   </section>
   
