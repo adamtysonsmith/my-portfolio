@@ -3,7 +3,7 @@
 <head>
   <!-- Page Metadata-->
   <meta charset="utf-8">
-  <title>Web Design Portfolio for Adam T. Smith | Atlanta, GA</title>
+  <title>Web Development Portfolio for Adam T. Smith | Boulder, CO</title>
   <meta name="description" content="Welcome to my Web Design Portfolio. My name is Adam Smith, a front end developer in Atlanta, GA.">
   <meta name="author" content="Adam T. Smith">
 
@@ -41,7 +41,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <nav>
       <ul class="nav-list">
           <li class="nav-item"><a href="#featured">Work</a></li>
-          <li class="nav-item"><a href="#development">Skills</a></li>
+          <li class="nav-item"><a href="#skills">Skills</a></li>
           <li class="nav-item"><a href="#about">About</a></li>
           <li class="nav-item"><a href="#resume">Resume</a></li>
           <li class="nav-item"><a href="#contact">Contact</a></li>
@@ -51,19 +51,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- Intro Header -->
   <header id="featured">
       <div class="container">
-        <h1>Welcome to my Web Design Portfolio</h1>
-        <p>I'm a fan of JavaScript, Responsive Design, CSS3 and Modern Web Apps built on the MEAN Stack. Check out some of my featured work along with an insightful data visualization of my skills below.</p>  
+        <h1>Welcome to my Development Portfolio</h1>
+        <p>I'm a fan of JavaScript, Responsive Web Design, and Modern Web Apps powered by Node.js<br /> Check out some of my featured work along with an insightful data visualization of my skills below.</p>  
         <p>Thanks for stopping by!</p>
         <img class="signature" src="img/signature.png" /> 
       </div>
   </header>
  
   <!-- Portfolio Featured Items -->
+<!--
     <section id="portfolio" class="row">
       <div class="twelve columns">
        <ul>
             <li class="portfolio-thumb">
-               <!-- Inline block is whitespace Sensitive, Chain together list items to remove unwanted margin -->
+                Inline block is whitespace Sensitive, Chain together list items to remove unwanted margin 
                 <a href=""><img src="img/portfolio-ttww.jpg" alt=""></a>
                 <div class="container project-detail pullDown">
                    <div class="four columns">
@@ -115,7 +116,61 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
        </ul>
       </div>
     </section>
-    
+-->
+  
+   <!-- Portfolio Sections -->
+  <section id="portfolio-spearhead" class="row">
+    <div class="container">
+      <h2>Spearhead Project Management App</h2>
+      <h3>Spearhead is a simple, personal project management app designed to help you get projects finished on time.</h3>
+      <span class="badge-green1">Node.js</span>
+      <span class="badge-blue1">Express</span>
+      <span class="badge-green2">AngularJS</span>
+      <span class="badge-blue2">D3.js</span>
+      <span class="badge-blue3">MongoDB</span>
+
+      <p>I needed an app that would make it easier to accurately estimate project deadlines without overlapping projects, or underestimating the workload.  I decided to create a methodology and application to solve this problem, and Spearhead was born.  This project is still in development, however I can provide you with a login if you are interested in seeing the progress!</p>
+      <p>The front end of this app has been rewritten several times using Bootstrap, Materialize CSS, and Angular Material.  The next iteration in progress is built using Polymer.  It has been a good learning experience, and I enjoy trying out different frameworks to discover their unique strengths.</p>
+      <a class="button button-primary" href="http://spearhead.cc" target="_blank">Visit Spearhead</a>
+
+      <p class="bold">Check it out on Github:<p>
+      <a class="button" href="https://github.com/adamtysonsmith/spearhead-angular" target="_blank">spearhead-angular</a>
+      <a class="button" href="https://github.com/adamtysonsmith/spearhead-polymer" target="_blank">spearhead-polymer</a>
+
+      <p class="bold">App Screenshots:<p>
+      <img class="portfolio-lg" src="img/spearhead/timeline.jpg" alt="Spearhead Timeline">
+      <img class="portfolio-lg" src="img/spearhead/project-detail.jpg" alt="Spearhead Project Details">
+    </div>
+  </section>
+  
+  <section id="portfolio-jade2html" class="row">
+    <div class="container">
+      <h2>Jade2HTML</h2>
+      <h3>Allows you to develop a website using jade templating with any data source, and compile to static HTML for fast performance and easy deployment.</h3>
+
+      <span class="badge-green1">Node.js</span>
+      <span class="badge-blue1">Express</span>
+      <span class="badge-blue3">Jade</span>
+      
+      <p>Sometimes you just want a website that has all the benefits of static HTML, without actually writing 100,000 pages of HTML.  Well, maybe you don't, but I do!  Static HTML sites are blazing fast, they can be hosted anywhere, and they do not require a database, so the security concerns are minimal.  On the other hand, huge static HTML websites are a pain in the ass to maintain, and accumulate tons of repetitive code, yuck.  If only there was a solution..</p>
+      <p>These were the thoughts that inspired me to write this tool.  This is more of a development workflow that uses Node, Express, and any JSON data source that you like.  The only requirement is that each data object contains a 'filename' property that can be used for routing during development.  It will use that unique filename to write the html files when you compile.  Easy as pie.</p>
+      <p>Check out the documentation on Github, I have provided some functions to let you build out the directory structure, pass in data, and give you fine grained control when compiling your templates.</p>
+      
+      <p class="bold">Check it out on Github:<p>
+      <a class="button" href="https://github.com/adamtysonsmith/jade2html" target="_blank">jade2html</a>
+    </div>
+  </section>
+  
+  <section id="portfolio-portfolio" class="row">
+    <div class="container">  
+      <h2>My Portfolio</h2>
+      <span class="badge-blue2">D3.js</span>
+      <span class="badge-blue1">AngularJS</span>
+      <p>A portfolio that features itself, what? I decided it would be worth mentioning some of the technology used in this very website that you behold in your browser.  If you scroll below you will find a D3 visualization that allows you to explore some of my skills.  Click on each bubble to bring up an animated bar chart, representing my estimated skill levels for each topic.  If you click into one of the bars, a detailed list of these skills will appear below.  I thought this would be a good way to display some of my strengths and areas that I can improve, for both employers and personally to keep track of my learning progress.**</p>
+      <i>** Skills Last Updated May 2015</i>
+    </div>
+  </section>
+  
   <!-- Calls to Action -->
   <section id="cta" class="row">
     <div class="container">
@@ -124,104 +179,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <p>I am available for a Freelance Project or JavaScript Development Position.</p>
             <a class="button-dark" href="#contact">Contact Me</a>
         </div>
-    </div>
-  </section>
-      
-  <!-- Development Section -->
-  <div class="dev-container">
-    <section id="development" class="row">
-    <div class="container">
-      <div class="ten columns">
-        <h2>Development</h2>
-        <p>JavaScript was the first programming language I learned, and used on a regular basis in my work.  When I discovered Node.js and realized that I could create full stack applications in JavaScript very quickly, I fell in love.</p>
-        <p>Building apps on the MEAN stack has been an amazing journey that I will continue to enjoy.</p>
-        <p class="hidden-dev">Web development is my true calling in life, the skill that I enjoy most of all.  My obsession began with graphic design.  After spending years of teaching myself how to create print and web graphics, I developed a burning desire to take my static designs and bring them to life on the web.</p>
-        <p class="hidden-dev">I began learning basic HTML and CSS, and then diving into WordPress.</p>
-        <p class="hidden-dev">As my front-end game became stronger, I wanted to do more.  I wanted to build fully functional applications that people would enjoy using.  My desire evolved into learning about many different programming languages, methodologies, and web architecture before embracing Node.js based web apps.</p>
-        <p class="hidden-dev">I love developing on my Macbook Pro using Brackets and Adobe CC Suite.</p>
-        <a class="button toggle-dev">Learn More</a>
-      </div>
-    </div>
-    </section>
-  </div>
-  <section id="development-icons" class="row">
-    <div class="container">
-      <div class="twelve columns">
-        <h3>I Enjoy Using</h3>
-        <ul>
-            <li class="dev-logo"><img src="img/logos/node-light.png" /></li>
-            <li class="dev-logo"><img src="img/logos/express.png" /></li>
-            <li class="dev-logo"><img src="img/logos/angular.png" /></li>
-            <li class="dev-logo"><img src="img/logos/mongodb.png" /></li>
-            <li class="dev-logo"><img src="img/logos/wordpress.png" /></li>
-            <li class="dev-logo"><img src="img/logos/jquery.png" /></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-    
-  <!-- SEO Section -->
-  <div class="seo-container">
-    <section id="seo" class="row">
-    <div class="container">
-      <div class="ten columns">
-        <h2>SEO</h2>
-       <p>I approach SEO with a whitehat, modern marketing perspective.  Emphasis on local SEO, valuable content, social influence and user experience will ensure you are staying ahead of the curve.  Tracking and measuring your results is equally important for a successful campaign.</p>
-<p>The game is always changing, but the core rules remain consistent: Provide great content to your users and make it an enjoyable, shareable experience.</p>
-        <p class="hidden-seo">I was drawn to SEO for optimizing my client’s WordPress sites, not realizing the vast amount of knowledge I would acquire.  I obsessively studied every credible source and began implementing best SEO practices on my own websites, and eventually for my client’s websites as well.  </p>
-        <p class="hidden-seo">Vigorously exploring the subjects of Keyword Research, Technical Code Optimization, and Link Acquisition laid a solid foundation for my SEO education.</p>
-        <p class="hidden-seo">After one year of learning and practicing, I decided to pursue an SEO Specialist position at BKV, Inc. - an Atlanta advertising agency.  Greg Lee, the Director of SEO is a 10+ year veteran in the industry, and I greatly benefited from his experience and in-depth knowledge on many different SEO strategies and techniques.</p>
-        <p class="hidden-seo">I have had the opportunity to work with SEO clients such as Children's International, DS Services, and AgencyFinder.</p>
-        <a class="button toggle-seo">Learn More</a>
-      </div>
-    </div>
-    </section>
-  </div>
-  <section id="seo-icons" class="row">
-    <div class="container">
-      <div class="twelve columns">
-        <h3>I have performed SEO for</h3>
-        <ul>
-            <li class="seo-logo"><img src="img/logos/ds-services.png" /></li>
-            <li class="seo-logo"><img src="img/logos/crystal-springs.png" /></li>
-            <li class="seo-logo"><img src="img/logos/children-international.png" /></li>
-            <li class="seo-logo"><img src="img/logos/agencyfinder.png" /></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-    
-  <!-- Data Analysis Section -->
-  <section id="data" class="row">
-    <div class="container">
-      <div class="ten columns">
-        <h2>Data</h2>
-        <p>I was introduced to the wonderful world of Data Analysis and Visualization by another BKV superstar, Jerelle Gainey.  I became intent on helping to redesign our client facing reports, which proved to be valuable for the agency.  I was promoted as a Data Analyst to pursue the project full-time.</p>
-        <p>My main objectives were to improve the reporting experience for our clients, improve the way data was structured in the reports, and create insightful data visualizations to reveal the story behind the numbers.</p>
-        <p class="hidden-data">This taught me a lot about web analytics, advertising metrics, and tracking code implementation options using Tag Management solutions.</p>
-        <p class="hidden-data">I became very experienced in pushing Excel to the limits - dynamic date range selections, complex dropdown tables, and automatic updating of chart dashboards.</p>
-        <p class="hidden-data">I have worked with clients like Hubzu, Delta Community Credit Union, March of Dimes, Southern Company, Decluttr and Young Harris College to name a few.</p>
-        <p class="hidden-data">I kick ass with Google Analytics, Google Tag Manager, and Excel.</p>
-        <a class="button toggle-data">Learn More</a>
-      </div>
-    </div>
-    <div class="data-graph"></div>
-  </section>
-  <section id="data-icons" class="row">
-    <div class="container">
-      <div class="twelve columns">
-        <h3>I have provided Data Services for</h3>
-        <ul>
-            <li class="data-logo"><img src="img/logos/hubzu.png" /></li>
-            <li class="data-logo"><img src="img/logos/dell-secureworks.png" /></li>
-            <li class="data-logo"><img src="img/logos/decluttr.png" /></li>
-            <li class="data-logo"><img src="img/logos/march-of-dimes.png" /></li>
-            <li class="data-logo"><img src="img/logos/delta-community.png" /></li>
-            <li class="data-logo"><img src="img/logos/floor-decor.png" /></li>
-            <li class="data-logo"><img src="img/logos/southern-company.png" /></li>
-            <li class="data-logo"><img src="img/logos/YHC.png" /></li>
-        </ul>
-      </div>
     </div>
   </section>
 
@@ -257,28 +214,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </section>
 
 
-      
   <!-- About Me Section -->
   <section id="about" class="row">
     <div class="container">
       <div class="three columns">
         <img class="portrait" src="img/adam-smith.jpg">
         <h3>My Objective</h3>
-        <p>I am looking to work with a forward-thinking company or startup, creating something of value for the world.</p>
-        <p>I believe that my previous experience in Graphic Design, SEO and Data Analysis will give me a unique edge as a full-stack JavaScript Developer.</p>
+        <p>To use technology and my life experiences to create something of value for the world.</p>
+        <p>Through <a href="http://www.refactoru.com" target="_blank">RefactorU</a> I have been blessed to meet many talented people that have given me the opportunity to collaborate on some awesome projects.  Stay tuned!</p>
         <a class="social-icon" href="https://github.com/adamtysonsmith" target="_blank"><img src="img/social-github.png" width="30%"></a>
         <a class="social-icon" href="https://linkedin.com/in/adamtysonsmith" target="_blank"><img src="img/social-linkedin.png" width="30%"></a>
       </div>
       <div class="nine columns">
         <h2>About Me</h2>
-        <p>I’m Adam - a self taught developer and front-end designer from Atlanta.  I have been designing and building stuff since 2011.  After learning graphic design to create logos and t-shirt prints, my attention turned to web design and I never stopped learning.  I initially wanted to take my designs and bring them to life, but something unexpected happened: Programming became my new love.</p>
+        <p>I’m Adam - a self-taught developer from Atlanta.  I have been designing and building stuff since 2011.  After learning graphic design to create logos and t-shirt prints, my attention turned to web design and I never stopped learning.  I initially wanted to take my designs and bring them to life, but something unexpected happened: Programming became my new love.</p>
 
-        <p>I began designing WordPress websites and logos for small businesses for a few years before stumbling upon an opportunity at BKV, an advertising agency here in Atlanta.  After about 2 years of working as an SEO Specialist and Data Analyst for BKV, I decided to pursue an entrepreneurial venture unrelated to my love for technology.  Although successful, I knew that my talents were not being put to good use.  I realized that doing what I love is more important than the money.</p>
+        <p>I began designing WordPress websites and logos for small businesses for a few years before stumbling upon an opportunity at BKV, an advertising agency here in Atlanta.  After about 2 years of working as an SEO Specialist and Data Analyst for BKV, I decided to pursue an entrepreneurial venture unrelated to my love for technology.  Although successful, I knew that my talents were not being put to good use.  I realized that doing what I love is more important than the money.  I decided to relocate to Colorado, and attend a full stack JavaScript bootcamp at RefactorU.  Since then I have been teaching kids to write code in HTML, CSS and JavaScript through a program called KidCodeIt.  I spend my days as a Software Engineer for CommercialTribe.</p>
+        
         <h3>What Motivates Me?</h3>
         <p>I am naturally curious, with an insatiable thirst for knowledge.  When I figure out how something works, I will try to push it to the limit until I find a better solution.  With JavaScript development, there are seemingly infinite frameworks which is very exciting for me.  I enjoy learning new things and thinking about how to leverage them in creative ways.</p>
       </div>
     </div>
   </section>
+
 
   <!-- Resume Download Call to Action -->
   <section id="resume" class="row">
@@ -290,7 +248,108 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
     </div>
   </section>
-      
+
+
+  <!-- Development Section -->
+  <div class="dev-container">
+    <section id="development" class="row">
+    <div class="container">
+      <div class="ten columns">
+        <h2>Development</h2>
+        <p>JavaScript was the first programming language I learned, and used on a regular basis in my work.  When I discovered Node.js and realized that I could create full stack applications in JavaScript very quickly, I fell in love.</p>
+        <p>Building apps on the MEAN stack has been an amazing journey that I will continue to enjoy.</p>
+        <p class="hidden-dev">Web development is my true calling in life, the skill that I enjoy most of all.  My obsession began with graphic design.  After spending years of teaching myself how to create print and web graphics, I developed a burning desire to take my static designs and bring them to life on the web.</p>
+        <p class="hidden-dev">I began learning basic HTML and CSS, and then diving into WordPress.</p>
+        <p class="hidden-dev">As my front-end game became stronger, I wanted to do more.  I wanted to build fully functional applications that people would enjoy using.  My desire evolved into learning about many different programming languages, methodologies, and web architecture before embracing Node.js based web apps.  I am also very interested in learning other languages when I can find the time.</p>
+        <a class="button toggle-dev">Learn More</a>
+      </div>
+    </div>
+    </section>
+  </div>
+  <section id="development-icons" class="row">
+    <div class="container">
+      <div class="twelve columns">
+        <h3>I Enjoy Using</h3>
+        <ul>
+            <li class="dev-logo"><img src="img/logos/node-light.png" /></li>
+            <li class="dev-logo"><img src="img/logos/express.png" /></li>
+            <li class="dev-logo"><img src="img/logos/angular.png" /></li>
+            <li class="dev-logo"><img src="img/logos/mongodb.png" /></li>
+            <li class="dev-logo"><img src="img/logos/wordpress.png" /></li>
+            <li class="dev-logo"><img src="img/logos/jquery.png" /></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SEO Section -->
+  <div class="seo-container">
+    <section id="seo" class="row">
+    <div class="container">
+      <div class="ten columns">
+        <h2>SEO</h2>
+        <p>I approach SEO with a whitehat, modern marketing perspective.  Emphasis on local SEO, valuable content, social influence and user experience will ensure you are staying ahead of the curve.  Tracking and measuring your results is equally important for a successful campaign.</p>
+        <p>The game is always changing, but the core rules remain consistent: Provide great content to your users and make it an enjoyable, shareable experience.</p>
+        <p class="hidden-seo">I was drawn to SEO for optimizing my client’s WordPress sites, not realizing the vast amount of knowledge I would acquire.  I obsessively studied every credible source and began implementing best SEO practices on my own websites, and eventually for my client’s websites as well.</p>
+        <p class="hidden-seo">Vigorously exploring the subjects of Keyword Research, Technical Code Optimization, and Link Acquisition laid a solid foundation for my SEO education.</p>
+        <p class="hidden-seo">After one year of learning and practicing, I decided to pursue an SEO Specialist position at BKV, Inc. - an Atlanta advertising agency.  Greg Lee, the Director of SEO is a 10+ year veteran in the industry, and I greatly benefited from his experience and in-depth knowledge on many different SEO strategies and techniques.</p>
+        <p class="hidden-seo">I have had the opportunity to work with SEO clients such as Children's International, DS Services, and AgencyFinder.</p>
+        <a class="button toggle-seo">Learn More</a>
+      </div>
+    </div>
+    </section>
+  </div>
+  <section id="seo-icons" class="row">
+    <div class="container">
+      <div class="twelve columns">
+        <h3>I have performed SEO for</h3>
+        <ul>
+            <li class="seo-logo"><img src="img/logos/ds-services.png" /></li>
+            <li class="seo-logo"><img src="img/logos/crystal-springs.png" /></li>
+            <li class="seo-logo"><img src="img/logos/children-international.png" /></li>
+            <li class="seo-logo"><img src="img/logos/agencyfinder.png" /></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Data Analysis Section -->
+  <section id="data" class="row">
+    <div class="container">
+      <div class="ten columns">
+        <h2>Data</h2>
+        <p>I was introduced to the wonderful world of Data Analysis and Visualization by another BKV superstar, Jerelle Gainey.  I became intent on helping to redesign our client facing reports, which proved to be valuable for the agency.  I was promoted as a Data Analyst to pursue the project full-time.</p>
+        <p>My main objectives were to improve the reporting experience for our clients, improve the way data was structured in the reports, and create insightful data visualizations to reveal the story behind the numbers.</p>
+        <p class="hidden-data">This taught me a lot about web analytics, advertising metrics, and tracking code implementation options using Tag Management solutions.</p>
+        <p class="hidden-data">I became very experienced in pushing Excel to the limits - dynamic date range selections, complex dropdown tables, and automatic updating of chart dashboards.</p>
+        <p class="hidden-data">I have worked with clients like Hubzu, Delta Community Credit Union, March of Dimes, Southern Company, Decluttr and Young Harris College to name a few.</p>
+        <p class="hidden-data">I am proficient with Google Analytics, Google Tag Manager, and Excel.</p>
+        <a class="button toggle-data">Learn More</a>
+      </div>
+    </div>
+    <div class="data-graph"></div>
+  </section>
+  <section id="data-icons" class="row">
+    <div class="container">
+      <div class="twelve columns">
+        <h3>I have provided Data Services for</h3>
+        <ul>
+            <li class="data-logo"><img src="img/logos/hubzu.png" /></li>
+            <li class="data-logo"><img src="img/logos/dell-secureworks.png" /></li>
+            <li class="data-logo"><img src="img/logos/decluttr.png" /></li>
+            <li class="data-logo"><img src="img/logos/march-of-dimes.png" /></li>
+            <li class="data-logo"><img src="img/logos/delta-community.png" /></li>
+            <li class="data-logo"><img src="img/logos/floor-decor.png" /></li>
+            <li class="data-logo"><img src="img/logos/southern-company.png" /></li>
+            <li class="data-logo"><img src="img/logos/YHC.png" /></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
   <!-- Contact Section -->
   <section id="contact" class="row" ng-controller="formController">
     <div class="container">
