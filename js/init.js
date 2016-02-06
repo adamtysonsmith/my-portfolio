@@ -1,5 +1,10 @@
 $(document).ready(function() {
-  // Initialize the page with the content hidden
+  // Make mobile menu update hash on select change
+  $('#mobile-nav').change(function() {
+    location = $(this).find('option:selected').val();
+  });
+  
+  // Initialize experience sections with content hidden
   $('.hidden-dev').hide();
   $('.hidden-seo').hide();
   $('.hidden-data').hide();
@@ -8,8 +13,7 @@ $(document).ready(function() {
   toggleHandler('seo');
   toggleHandler('data');
 
-  // Registers click events and handles toggle
-  // for each experience section
+  // Register events for experience sections
   function toggleHandler(section) {
     $('.toggle-' + section).click(function() {
       $('.hidden-' + section).slideToggle(300, function() {
@@ -23,4 +27,6 @@ $(document).ready(function() {
     });
   }
 
+  // Conditionally add novalidate to contact form if JavaScript is enabled
+  $('form').attr('novalidate', '');
 });

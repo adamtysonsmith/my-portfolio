@@ -1,13 +1,12 @@
 $(document).ready(function() {
-    
-  // Run the animations
+
+  // Run animations
   animateCTA('#cta', 'bigEntrance');
   animateCTA('#resume', 'slideDown');
-  animateBinaryCode();
   animateDataGraph();
+  animateBinaryCode();
   
-  
-  // Animate CTA Text and Buttons
+  // Register events for CTA text and buttons
   function animateCTA(id, animation) {
     $(id).on('mousemove', function() {
       $(id + ' h2, ' + id + ' p').addClass(animation);
@@ -15,6 +14,19 @@ $(document).ready(function() {
     });
   }
 
+  // Register event for data section animation
+  function animateDataGraph() {
+    $('.data-graph').css('bottom', '-200px').css('opacity', '0.25');
+    $('#data').on('mousemove', graphAnimation);
+
+    function graphAnimation(evt) {
+      $('.data-graph').animate({
+        opacity: 1,
+        bottom: '0px'
+      }, 1500);
+    }
+  }
+  
   // Background Animation for Development Section
   function animateBinaryCode() {
     generateBinary();
@@ -37,39 +49,17 @@ $(document).ready(function() {
       }
     }
     
-    // Loop the Animation for each line, alternating the direction
+    // Loop the Animation with recursion, alternating
+    // the direction for each line of text
     function loopAnimationLeft() {
       $('.binary:even').css('right', '0px');
-      $('.binary:even').animate({ right: '2000' }, 50000, 'linear',
-        function() { 
-          loopAnimationLeft() 
-      });
+      $('.binary:even').animate({ right: '2000' }, 50000, 'linear', loopAnimationLeft);
     }
     
     function loopAnimationRight() {
       $('.binary:odd').css('left', '-4000px');
-      $('.binary:odd').animate ({ left: '4000' }, 200000, 'linear',
-        function() {
-          loopAnimationRight();
-      });
+      $('.binary:odd').animate({ left: '4000' }, 200000, 'linear', loopAnimationRight);
     }
   }
-  
-  // Background Animation for Data Section
-  function animateDataGraph() {
-    $('.data-graph').css('bottom', '-200px').css('opacity', '0.25');
-    $('#data').on('mousemove', graphAnimation);
-
-    function graphAnimation(evt) {
-      $('.data-graph').animate({
-        opacity: 1,
-        bottom: '0px'
-      }, 1500);
-    }
-  }
-  
-
-  // Conditionally add novalidate to form if JavaScript is enabled
-  $('form').attr('novalidate', '');
 
 });

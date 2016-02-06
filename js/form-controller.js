@@ -3,18 +3,18 @@
 
   app.controller('formController', function($scope, $http) {
     
-    var setQueryString = function(data) {
-      var queryString = '';
+    var queryString = function(data) {
+      var qstring = '';
       for (d in data) {
-       if (data.hasOwnProperty(d)) queryString += d + '=' + data[d] + '&';
+       if (data.hasOwnProperty(d)) qstring += d + '=' + data[d] + '&';
       }
-      return queryString.slice(0, queryString.length - 1);
+      return qstring.slice(0, qstring.length - 1);
     }
     
     var postData = {
       method: 'POST',
       url: 'contact.php',
-      data: setQueryString($scope.formData),
+      data: queryString($scope.formData),
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     }
     
