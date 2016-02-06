@@ -1,0 +1,77 @@
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid $dream_in_color;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 80%;
+    border-radius: 8px;
+    height: 7px;
+    border: 1px solid #bdc3c7;
+    background-color: #fff; 
+}
+input[type="range"]:focus {
+	-webkit-appearance: none;
+	background-color: #ecf0f1;
+	border: 1px solid #bdc3c7;
+
+
+	border-radius: 10px;
+	cursor: pointer;
+    outline: none;
+}
+// Webkit Styles
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    width: 25px;
+    height: 25px;
+    background: url(../img/hexagon.png);
+//    margin-top: 0px;
+}
+
+.ng-invalid.ng-touched, .ng-invalid.ng-dirty {
+    border-color: firebrick;    
+}
+
+.ng-valid.ng-touched, .ng-valid.ng-dirty {
+    border-color: forestgreen;
+}
+
+#form-messages {
+    margin-bottom: 15px;
+}
+
+.error {
+    background-color: #f8d6d7;
+    border-radius: 10px;
+    border: 2px solid darkred;
+    
+    margin-bottom: 5px;
+    padding: 8px 15px;
+    
+    color: darkred;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.success {
+    background-color: #CBF7CB;
+    border-radius: 10px;
+    border: 2px solid darkgreen;
+    
+    margin-bottom: 5px;
+    padding: 8px 15px;
+    
+    color: darkgreen;
+    font-size: 16px;
+    line-height: 25px;
+}

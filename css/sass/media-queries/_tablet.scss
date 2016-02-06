@@ -1,0 +1,23 @@
+// Min Width Media Query for Tablet
+@media (min-width: 551px) and (max-width: 900px) {
+    header {
+        h1 { font-size: $tablet-header-h1; }
+        p { font-size: $tablet-header-p; }
+    }
+    
+    #portfolio {
+        -webkit-clip-path: none;
+        clip-path: none;
+    }
+    
+    #skills-chart {
+        width: 100%;
+    }
+    
+    .dev-logo, .seo-logo {
+        width: 20%;
+    }
+    .data-logo {
+        width: 21%;
+    }
+}

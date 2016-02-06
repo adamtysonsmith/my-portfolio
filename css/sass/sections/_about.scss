@@ -1,0 +1,28 @@
+#about {
+  background-color: $dream_in_color;
+  color: $light_text;
+  
+  h3 { 
+    font-size: $section-h3; 
+  }
+  
+  a { 
+    color: #FEE55B;
+    text-decoration: none;
+  }
+}
+
+#resume {
+  background-color: lighten($dream_in_color, 7%);
+  color: $light_text;
+  text-align: center;
+}
+
+.portrait {
+  width: 50%;
+  border-radius: 100%;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+}

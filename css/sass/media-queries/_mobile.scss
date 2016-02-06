@@ -1,0 +1,46 @@
+// Max Width Media Query for Mobile
+@media (max-width: 550px) {
+  nav select {
+    display: block;
+    margin: 5px auto;
+  }
+  
+  nav ul {
+    display: none;
+  }
+
+  header {
+    h1 { 
+      font-size: $mobile-h1; 
+    }
+    p { 
+      font-size: $mobile-header-p; 
+    }
+  }
+
+  #portfolio {
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+  
+  .portfolio-thumb {
+    width: 100%;
+    position: relative; // Changes absolute position of Project Detail
+  }
+  
+  .project-detail-img {
+    display: none;
+  }
+
+  #skills-chart {
+    width: 100%;
+  }
+
+  .dev-logo, .seo-logo, .data-logo {
+    width: 40%;
+  }
+  
+  .data-graph {
+    background: url(../img/line-graph-mobile.png) no-repeat bottom;
+  }
+}

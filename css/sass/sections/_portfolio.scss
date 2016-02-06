@@ -1,0 +1,50 @@
+#portfolio-spearhead {
+  background-color: $light_blue;
+}
+
+#portfolio-jade2html {
+  background-color: $blue_gray;
+}
+
+#portfolio-goodwifi {
+  background-color: darken($sky_blue, 5%);
+}
+
+#portfolio-portfolio {
+  background-color: $sky_blue;
+}
+
+.portfolio-lg {
+  width: 100%;
+}
+
+.portfolio-sm {
+  width: 100%;
+}
+
+.portfolio-link {
+  font-size: 1.8rem;
+  margin-bottom: 22px;
+}
+
+
+[id*='portfolio-'] h2 {
+  font-size: 3.6rem;
+}
+
+[id*='portfolio-'] h3 {
+  font-size: 2.4rem;
+}
+
+[id*='portfolio-'] .bold {
+  font-weight: bold;
+  margin-top: 22px;
+}
+
+.github-link {
+  font-size: 18px;
+}
+
+.gw-screenshots {
+  margin-bottom: 30px;
+}

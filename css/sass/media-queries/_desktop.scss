@@ -1,0 +1,14 @@
+// Min Width Media Query for Desktop
+@media (min-width: 901px)  {
+  .dev-logo, .seo-logo {
+    width: 14%;
+  }
+  
+  .data-logo {
+    width: 17%;
+  }
+  
+  .error {
+    width: 50%;
+  }
+}

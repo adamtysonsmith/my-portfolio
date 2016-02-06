@@ -1,0 +1,23 @@
+header {
+  margin-top: 50px; // Navigation Fix
+  height: 518px;
+  background-color: $superlight_blue;
+  text-align: center;
+  position: relative;
+  
+  h1 { 
+    font-size: $header-h1;
+    padding-top: 15%;
+    color: $dark_text;
+  }
+  
+  p {
+    font-size: $header-p;
+    color: $dark_text;
+  }
+}
+
+.signature {
+  margin-top: -25px;
+  width: 130px;
+}

@@ -1,18 +1,67 @@
 ////////////////////////////////////////////////////////////////////////////////
 //                                                                            //
-//  Table of Contents                                                         //                                                      //  I.   Configuration & Setup                                                //
+//  Table of Contents                                                         //                                             //  I.   Configuration & Setup                                                //
 //  II.  Visualization Functions                                              //
 //  III. Table Creation Function                                              //
 //  IV.  Control Flow for Navigating                                          //
 //                                                                            //
 ////////////////////////////////////////////////////////////////////////////////
 
-(function() {
-'use strict';
+var util = {
+  dataAccessor: function(data) {
+    return {
+      category: data.CATEGORY,
+      skill: data.SKILLNAME,
+      topic: data.TOPICNAME,
+      score: data.TOPICSCORE
+    }
+  },
+  sortDesc: function(data, prop) {
+    return data.sort(function(a, b) {
+      return b[prop] - a[prop];
+    });
+  },
+  sortAsc: function(data, prop) {
+    return data.sort(function(a, b) {
+      return a[prop] - b[prop];
+    });
+  }
+};
 
+(function($, queue, util) {
+  'use strict';
+  
+  //////////////////////////////////////
+  // Load Data from public CSV
+  //////////////////////////////////////
+  var csvUrl = 'https://docs.google.com/spreadsheets/d/1SkV0k9GK46mevUPr_sCtl0A3IEUBEXTryl-xcWUD9Jo/pub?output=csv';
+  
+  queue().defer(d3.csv, csvUrl)
+    .await(ready);
+  
+  function ready(err, rows) {
+    // Data is received, initialize the chart!
+    if (err) console.log('Error requesting spreadsheet data', err);
+    var flatData = rows;
+    var categoryData = transformCategoryData(flatData);
+    var chartData = transformChartData(flatData);
+  }
+  
+  function transformCategoryData(data) {
+    return d3.nest()
+      .key(function(d) { return d[d.CATEGORY] = d.CATEGORY; })
+      .rollup(function(e) { return d3.sum(e, function(d) { return d.TOPICSCORE; }) / 10; })
+      .entries(data);
+  }
+  
+  function transformChartData(data) {
+    // do stuff
+  }
+  
 //////////////////////////////////////////////////
-// I. Configuration & Setup                    //
+// I. Configuration & Setup                     //
 //////////////////////////////////////////////////
+
 if ($(window).width() < 550) {
     var width = 600;
     var height = 800;
@@ -20,7 +69,7 @@ if ($(window).width() < 550) {
     var width = 720;
     var height = 450;
 }
-    
+
 var sortedData = categoryData.children.sort(function(a, b) {
     return b.size - a.size; // descending
 });
@@ -559,4 +608,4 @@ function navigateBubbles(d) {
     console.log(d.name + ' Bubble was clicked');
 }
 
-})(); // End Closure
+})(jQuery, queue, util); // End Closure

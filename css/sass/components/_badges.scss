@@ -1,0 +1,29 @@
+@mixin badge($color) {
+  display: inline-block;
+  background-color: $color;
+  color: white;
+  border-radius: 3px;
+  padding: 8px 15px;
+  text-shadow: 1px #333;
+  margin: 0px 0px 20px 0px;
+}
+
+.badge-blue1 {
+  @include badge(darken($b1, 5%));
+}
+
+.badge-blue2 {
+  @include badge(darken($b2, 5%));
+}
+
+.badge-blue3 {
+  @include badge(darken($b3, 5%));
+}
+
+.badge-green1 {
+  @include badge(darken($b4, 5%));
+}
+
+.badge-green2 {
+  @include badge(darken($b5, 5%));
+}

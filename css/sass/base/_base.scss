@@ -1,0 +1,11 @@
+section {
+  width: 100%;
+  padding: 60px 0px;
+  color: $dark_text;
+  overflow: hidden;
+  position: relative;
+  
+  p { 
+    font-size: $section-p; 
+  }
+}
