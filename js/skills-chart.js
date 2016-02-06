@@ -1,6 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //                                                                            //
-//  Table of Contents                                                         //                                             //  I.   Configuration & Setup                                                //
+//  Table of Contents                                                         //
+//  I.   Configuration & Setup                                                //
 //  II.  Visualization Functions                                              //
 //  III. Table Creation Function                                              //
 //  IV.  Control Flow for Navigating                                          //
@@ -26,9 +27,9 @@ var util = {
       return a[prop] - b[prop];
     });
   }
-};
+}
 
-(function($, queue, util) {
+;(function($, queue, util) {
   'use strict';
   
   //////////////////////////////////////
