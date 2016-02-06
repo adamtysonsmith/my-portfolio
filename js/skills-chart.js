@@ -42,9 +42,13 @@ var util = {
   function ready(err, rows) {
     // Data is received, initialize the chart!
     if (err) console.log('Error requesting spreadsheet data', err);
+    
+    // Transform the data
     var flatData = rows;
     var categoryData = transformCategoryData(flatData);
     var chartData = transformChartData(flatData);
+    
+    // Run chart functions
   }
   
   function transformCategoryData(data) {
@@ -61,7 +65,9 @@ var util = {
 //////////////////////////////////////////////////
 // I. Configuration & Setup                     //
 //////////////////////////////////////////////////
-
+  
+  $('.hidden-skills-details').hide();
+  
 if ($(window).width() < 550) {
     var width = 600;
     var height = 800;
@@ -164,7 +170,7 @@ bigBubblesText.transition()
 
 
 
-/*****  Bubble Transformation *******/                    
+//  Bubble Transformation           
 function shiftBubbles() {
 
     bigBubblesText.transition()
@@ -599,6 +605,7 @@ function navigateBubbles(d) {
     d3.select('#chart-y-axis').remove();
     d3.select('#chart-x-axis').remove();
     horizontalBarChart.remove();
+  
     $('.hidden-skills-details').hide(300, function () {
         console.log('Skills Detail is now hidden');
     });

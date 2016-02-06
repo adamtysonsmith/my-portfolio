@@ -4,12 +4,13 @@
   <!-- Page Metadata-->
   <meta charset="utf-8">
   <title>Web Development Portfolio for Adam T. Smith | Boulder, CO</title>
-  <meta name="description" content="Welcome to my Web Design Portfolio. My name is Adam Smith, a front end developer in Atlanta, GA.">
+  <meta name="description" content="Welcome to my Web Development Portfolio. My name is Adam Smith, a JavaScript Engineer in Boulder, CO">
   <meta name="author" content="Adam T. Smith">
 
   <!-- Mobile Specific Meta-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="google-site-verification" content="_PeioFFb0N72p0vK787pm3Cmbr9SkPN6-f66X2rwR84" />
+  
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="img/favicon.png">
 
@@ -26,18 +27,18 @@
   <script src="js/toggle.js"></script>
   <script src="js/backgrounds.js"></script>
   <script src="js/project-detail.js"></script>
-    
 </head>
+
 <body ng-app="portfolioApp">
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TF5LWG"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TF5LWG');</script>
-<!-- End Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TF5LWG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TF5LWG');</script>
+  <!-- End Google Tag Manager -->
  
   <nav>
       <ul class="nav-list">
@@ -47,6 +48,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li class="nav-item"><a href="#resume">Resume</a></li>
           <li class="nav-item"><a href="#contact">Contact</a></li>
       </ul>
+      <select id="mobile-nav">
+          <option selected="selected" value="" disabled="">Menu</option>
+          <option value="#featured">Work</option>
+          <option value="#skills">Skills</option>
+          <option value="#about">About</option>
+          <option value="#resume">Resume</option>
+          <option value="#contact">Contact</option>
+      </select>
   </nav>
 
   <!-- Intro Header -->
