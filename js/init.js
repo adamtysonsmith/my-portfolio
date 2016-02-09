@@ -4,10 +4,11 @@ $(document).ready(function() {
     location = $(this).find('option:selected').val();
   });
   
-  // Initialize experience sections with content hidden
+  // Initialize sections with content hidden
   $('.hidden-dev').hide();
   $('.hidden-seo').hide();
   $('.hidden-data').hide();
+  $('.hidden-skills-details').hide();
   
   toggleHandler('dev');
   toggleHandler('seo');

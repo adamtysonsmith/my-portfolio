@@ -1,12 +1,16 @@
-var categoryData = { name: 'skills',
-  children: 
-   [ { name: 'Data', size: 51, color: '#66ccff' },
-     { name: 'Design', size: 46, color: '#99cc33' },
-     { name: 'Development', size: 144, color: '#ff9933' },
-     { name: 'SEO', size: 29, color: '#ff6666' } ] };
- 
-var skillData = { Data: 
-   [ { category: 'Data',
+var categoryData = { 
+  name: 'skills',
+  children: [
+    { name: 'Data', size: 51, color: '#66ccff' },
+    { name: 'Design', size: 46, color: '#99cc33' },
+    { name: 'Development', size: 144, color: '#ff9933' },
+    { name: 'SEO', size: 29, color: '#ff6666' }
+  ]
+};
+
+var skillData = { 
+  Data: [
+     { category: 'Data',
        skillName: 'Data Visualization',
        skillScore: 9,
        topics: 
@@ -88,9 +92,11 @@ var skillData = { Data:
           { topicName: 'Graph Databases', topicScore: 1 },
           { topicName: 'Cassandra', topicScore: 1 },
           { topicName: 'CouchDB', topicScore: 1 },
-          { topicName: 'Redis', topicScore: 1 } ] } ],
-  Design: 
-   [ { category: 'Design',
+          { topicName: 'Redis', topicScore: 1 } ] } 
+  ],
+  
+  Design: [ 
+     { category: 'Design',
        skillName: 'Design Concepts',
        skillScore: 8,
        topics: 
@@ -163,9 +169,11 @@ var skillData = { Data:
           { topicName: 'Information Architecture', topicScore: 6 },
           { topicName: 'Usability Testing', topicScore: 4 },
           { topicName: 'Influencing Behavioral Patterns', topicScore: 4 },
-          { topicName: 'Persuasive UX Techniques', topicScore: 4 } ] } ],
-  Development: 
-   [ { category: 'Development',
+          { topicName: 'Persuasive UX Techniques', topicScore: 4 } ] } 
+  ],
+  
+  Development: [ 
+     { category: 'Development',
        skillName: 'AngularJS',
        skillScore: 6,
        topics: 
@@ -381,9 +389,11 @@ var skillData = { Data:
             topicScore: 6 },
           { topicName: 'Developing Themes with Underscores',
             topicScore: 2 },
-          { topicName: 'Developing Themes with Genesis', topicScore: 2 } ] } ],
-  SEO: 
-   [ { category: 'SEO',
+          { topicName: 'Developing Themes with Genesis', topicScore: 2 } ] } 
+  ],
+  
+  SEO: [ 
+     { category: 'SEO',
        skillName: 'Content Optimization',
        skillScore: 8,
        topics: 
@@ -443,4 +453,6 @@ var skillData = { Data:
           { topicName: 'Microdata Optimizations using Schema.org',
             topicScore: 8 },
           { topicName: 'Google Webmaster Tools', topicScore: 8 },
-          { topicName: 'SEO Moz', topicScore: 8 } ] } ] };
+          { topicName: 'SEO Moz', topicScore: 8 } ] } 
+   ]
+};

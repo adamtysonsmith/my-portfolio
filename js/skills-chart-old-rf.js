@@ -8,78 +8,34 @@
 //                                                                            //
 ////////////////////////////////////////////////////////////////////////////////
 
-var util = {
-  dataAccessor: function(data) {
-    return {
-      category: data.CATEGORY,
-      skill: data.SKILLNAME,
-      topic: data.TOPICNAME,
-      score: data.TOPICSCORE
-    }
-  },
-  sortDesc: function(data, prop) {
-    return data.sort(function(a, b) {
-      return b[prop] - a[prop];
-    });
-  },
-  sortAsc: function(data, prop) {
-    return data.sort(function(a, b) {
-      return a[prop] - b[prop];
-    });
-  }
-}
-
-;(function($, queue, util) {
+(function($, queue, util) {
   'use strict';
-  
-  //////////////////////////////////////
-  // Load Data from public CSV
-  //////////////////////////////////////
-  var csvUrl = 'https://docs.google.com/spreadsheets/d/1SkV0k9GK46mevUPr_sCtl0A3IEUBEXTryl-xcWUD9Jo/pub?output=csv';
-  
-  queue().defer(d3.csv, csvUrl)
-    .await(ready);
-  
-  function ready(err, rows) {
-    // Data is received, initialize the chart!
-    if (err) console.log('Error requesting spreadsheet data', err);
-    
-    // Transform the data
-    var flatData = rows;
-    var categoryData = transformCategoryData(flatData);
-    var chartData = transformChartData(flatData);
-    
-    // Run chart functions
-  }
-  
-  function transformCategoryData(data) {
-    return d3.nest()
-      .key(function(d) { return d[d.CATEGORY] = d.CATEGORY; })
-      .rollup(function(e) { return d3.sum(e, function(d) { return d.TOPICSCORE; }) / 10; })
-      .entries(data);
-  }
-  
-  function transformChartData(data) {
-    // do stuff
-  }
   
 //////////////////////////////////////////////////
 // I. Configuration & Setup                     //
 //////////////////////////////////////////////////
   
+  // @fixme
+  // Initialization stuff
   $('.hidden-skills-details').hide();
   
-if ($(window).width() < 550) {
-    var width = 600;
-    var height = 800;
-} else {
-    var width = 720;
-    var height = 450;
-}
+  
+  // @fixme
+  // Responsive stuff
+  if ($(window).width() < 550) {
+      var width = 600;
+      var height = 800;
+  } else {
+      var width = 720;
+      var height = 450;
+  }
 
-var sortedData = categoryData.children.sort(function(a, b) {
-    return b.size - a.size; // descending
-});
+  // @fixme
+  // This sort should be done in DATA TRANSFORM phase above
+  var sortedData = categoryData.children.sort(function(a, b) {
+      return b.size - a.size; // descending
+  });
+  
     
 var visualization = d3.select('#skills-chart').append('svg')
     .attr('width', '100%')
@@ -170,6 +126,11 @@ bigBubblesText.transition()
     .ease('linear');
 
 
+  
+  
+  
+  
+  
 
 //  Bubble Transformation           
 function shiftBubbles() {
@@ -185,7 +146,7 @@ function shiftBubbles() {
         .each('end', function() {
             d3.select(this)
             .transition()
-                .attr('opacity', 0)
+            .attr('opacity', 0)
         });
     
     setTimeout(function() {
@@ -193,6 +154,9 @@ function shiftBubbles() {
     }, 600);
 }
 
+  
+  
+  
 function transformChart() {
     
     // Remove all the large text and big bubbles
@@ -224,56 +188,58 @@ function transformChart() {
                 d3.select(this).style('opacity', 'initial');
             });
     
+  
+    // @fixme Responsive stuff
     // Adjust the Small Bubble Positioning
     var smallBubbleY = 700;
     
     if ($(window).width() < 550) {
-    // Positioning for Mobile
-    d3.select('.small-bubble-Development')
-        .attr('r', '80')
-        .transition()
-        .attr('cy', smallBubbleY)
-        .attr('cx', '100')
-        .duration(1000)
-        .ease('elastic');
-    d3.select('.small-bubble-Data').transition()
-        .attr('r', '70')
-        .attr('cy', smallBubbleY)
-        .attr('cx','270')
-        .duration(1000)
-        .ease('elastic');
-    d3.select('.small-bubble-Design').transition()
-        .attr('r', '60')
-        .attr('cy', smallBubbleY)
-        .attr('cx','420')
-        .duration(1000)
-        .ease('elastic');
-    d3.select('.small-bubble-SEO').transition()
-        .attr('r', '40')
-        .attr('cy', smallBubbleY)
-        .attr('cx','540')
-        .duration(1000)
-        .ease('elastic');
+      // Positioning for Mobile
+      d3.select('.small-bubble-Development')
+          .attr('r', '80')
+          .transition()
+          .attr('cy', smallBubbleY)
+          .attr('cx', '100')
+          .duration(1000)
+          .ease('elastic');
+      d3.select('.small-bubble-Data').transition()
+          .attr('r', '70')
+          .attr('cy', smallBubbleY)
+          .attr('cx','270')
+          .duration(1000)
+          .ease('elastic');
+      d3.select('.small-bubble-Design').transition()
+          .attr('r', '60')
+          .attr('cy', smallBubbleY)
+          .attr('cx','420')
+          .duration(1000)
+          .ease('elastic');
+      d3.select('.small-bubble-SEO').transition()
+          .attr('r', '40')
+          .attr('cy', smallBubbleY)
+          .attr('cx','540')
+          .duration(1000)
+          .ease('elastic');
     } else {
-    // Positioning for Tablet and Desktop
-    d3.select('.small-bubble-SEO').transition()
-        .attr('cy', '35')
-        .duration(1000)
-        .ease('elastic');
-    d3.select('.small-bubble-Design').transition()
-        .attr('cy', '115')
-        .duration(1000)
-        .ease('elastic');
-    d3.select('.small-bubble-Data').transition()
-        .attr('cy', '220')
-        .duration(1000)
-        .ease('elastic');
-    d3.select('.small-bubble-Development')
-        .attr('r', '60')
-        .transition()
-        .attr('cy', '340')
-        .duration(1000)
-        .ease('elastic');
+      // Positioning for Tablet and Desktop
+      d3.select('.small-bubble-SEO').transition()
+          .attr('cy', '35')
+          .duration(1000)
+          .ease('elastic');
+      d3.select('.small-bubble-Design').transition()
+          .attr('cy', '115')
+          .duration(1000)
+          .ease('elastic');
+      d3.select('.small-bubble-Data').transition()
+          .attr('cy', '220')
+          .duration(1000)
+          .ease('elastic');
+      d3.select('.small-bubble-Development')
+          .attr('r', '60')
+          .transition()
+          .attr('cy', '340')
+          .duration(1000)
+          .ease('elastic');
     }
     
     // Draw the small bubble text
@@ -341,11 +307,9 @@ function transformChart() {
     }, 300);
 }
 
-// Setup some global vars so we can remove chart later
 var horizontalBarChart;
     
 function drawBarChart() {
-
     // Load the data based on URL hash
     switch (location.hash) {
         case '#Data':
@@ -361,7 +325,6 @@ function drawBarChart() {
             var barData = skillData.SEO;
             break;
     }
-
 
     // Use the margin convention
     if ($(window).width() < 550) {
