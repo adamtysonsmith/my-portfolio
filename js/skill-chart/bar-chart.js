@@ -1,5 +1,5 @@
 var BarChart = (function($, d3) {
-  this.exports = {
+  var exports = {
     init: initBarChart
   }
   
@@ -14,7 +14,6 @@ var BarChart = (function($, d3) {
   
   // MONOLITHIC FUNCTION
   // MAD SIDE EFFECTS
-  // Bar chart stuff
   var horizontalBarChart;
 
   function drawBarChart() {
@@ -165,8 +164,7 @@ var BarChart = (function($, d3) {
 
   } // End drawBarChart
   
-  
-  // Return Functions
-  return this.exports;
+
+  return exports;
 
 })(jQuery, d3);

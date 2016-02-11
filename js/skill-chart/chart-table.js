@@ -1,4 +1,4 @@
-(function($, d3) {  
+var ChartTable = (function($, d3) {  
 
   // Access d.topics.item and d.topics.topicScore  
 var tableData;

@@ -1,8 +1,16 @@
-(function($, d3) {
-  // Register window resize event handler
-  $(window).on('ready, resize', respondToScreenResize);
+var Events = (function($, d3) {
   
-  function respondToScreenResize() {
+  var exports = {
+    respondToScreen: registerScreenResizeEvent,
+    positionSmallBubbles: positionSmallBubbles
+  };
+  
+  // Register window resize event handler
+  function registerScreenResizeEvent() {
+    $(window).on('ready, resize', positionSmallBubbles);
+  }
+  
+  function positionSmallBubbles() {
     var smallBubbleY = 700;
     
     if ($(window).width() < 550) {
@@ -105,4 +113,12 @@
           .ease('elastic');
     }
   }
+  
+  // Initializes animation to show the bar chart
+  function transitionToBarChart() {
+    
+  }
+  
+  return exports;
+  
 })(jQuery, d3);
