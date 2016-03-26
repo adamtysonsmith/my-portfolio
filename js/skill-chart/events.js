@@ -1,8 +1,9 @@
-var Events = (function($, d3) {
+var Events = (function($, d3, BarChart) {
   
   var exports = {
     respondToScreen: registerScreenResizeEvent,
-    positionSmallBubbles: positionSmallBubbles
+    positionSmallBubbles: positionSmallBubbles,
+    transitionToBarChart: transitionToBarChart
   };
   
   // Register window resize event handler
@@ -115,10 +116,13 @@ var Events = (function($, d3) {
   }
   
   // Initializes animation to show the bar chart
-  function transitionToBarChart() {
-    
+  // was known as switchBubbles
+  function transitionToBarChart(width, height, skillData) {
+    BarChart.clear();
+    $('.hidden-skills-details').hide(300);
+    BarChart.init(width, height, skillData);
   }
   
   return exports;
   
-})(jQuery, d3);
+})(jQuery, d3, BarChart);

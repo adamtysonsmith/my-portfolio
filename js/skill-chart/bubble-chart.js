@@ -4,7 +4,7 @@ var BubbleChart = (function($, d3, Config, Events) {
   }
   
   // Bubble Chart
-  function initBubbleChart(categoryData) {
+  function initBubbleChart(categoryData, skillData) {
   
     // Grab the chart selection
     var visualization = Config.svg;
@@ -34,11 +34,13 @@ var BubbleChart = (function($, d3, Config, Events) {
       // Remove all the large text and big bubbles
       bigBubbleText.remove();
       bigBubbles.remove();
-      drawSmallBubbles(visualization, categoryData)
-      drawSmallBubbleText(visualization, categoryData)
+      
+      var smallBubbles = drawSmallBubbles(visualization, categoryData);
+      drawSmallBubbleText(visualization, categoryData);
+      registerSmallBubbleEvents(smallBubbles, width, height, skillData);
+      
       Events.positionSmallBubbles();
-      // @todo - Events function
-      // Events.transitionToBarChart
+      Events.transitionToBarChart(width, height, skillData);
     }
   }
   
@@ -96,17 +98,17 @@ var BubbleChart = (function($, d3, Config, Events) {
     return visualization.selectAll('circle')
       .data(categoryData).enter()
       .append('circle')
-        .attr('cx', 100)
-        .attr('cy', 250)
-        .attr('r', function(d) {
-          return d.values;
-        })
-        .attr('fill', function(d) {
-          return d.color;
-        })
-        .attr('class', function(d) {
-          return 'small-bubble-' + d.key;
-        });
+      .attr('cx', 100)
+      .attr('cy', 250)
+      .attr('r', function(d) {
+        return d.values;
+      })
+      .attr('fill', function(d) {
+        return d.color;
+      })
+      .attr('class', function(d) {
+        return 'small-bubble-' + d.key;
+      });
   }
   
 
@@ -170,9 +172,10 @@ var BubbleChart = (function($, d3, Config, Events) {
   }
   
   
-  function registerSmallBubbleEvents(smallBubbles, switchBubblesCB) {
+  function registerSmallBubbleEvents(smallBubbles, w, h, d) {
     smallBubbles.on('click', function(d) {
-        switchBubblesCB(d);
+        console.log('Clicked the small bubble')
+        Events.transitionToBarChart(w, h, d)
       })
       .on('mouseover', function() {
         d3.select(this).style('opacity', 0.7).style('cursor', 'pointer');
@@ -196,36 +199,22 @@ var BubbleChart = (function($, d3, Config, Events) {
   
   // private: redraws bar chart when small bubbles are selected
   // @todo - this function will become Events.transitionToBarChart
-  function switchBubbles(d, horizontalBarChart, drawBarChartCB) {
-    // Update the hash
-    location.hash = '#' + d.name;
-
-    // Remove the current chart
-    d3.select('#chart-y-axis').remove();
-    d3.select('#chart-x-axis').remove();
-    horizontalBarChart.remove();
-
-    // toggle the skills details
-    $('.hidden-skills-details').hide(300);
-
-    // redraw bar chart
-    drawBarChartCB();
-  }
-  //=======================================================================
+//  function switchBubbles(d, horizontalBarChart, drawBarChartCB) {
+//    // Update the hash
+//    location.hash = '#' + d.name;
+//
+//    // Remove the current chart
+//    d3.select('#chart-y-axis').remove();
+//    d3.select('#chart-x-axis').remove();
+//    horizontalBarChart.remove();
+//
+//    // toggle the skills details
+//    $('.hidden-skills-details').hide(300);
+//
+//    // redraw bar chart
+//    drawBarChartCB();
+//  }
   
-  
-  
-  
-  
-  
-
-  // Now we need to instantiate the bar chart..
-  // Should move this
-//  setTimeout(function() {
-//    drawBarChart();
-//  }, 300);
-  
-
   return exports;
 
 })(jQuery, d3, Configuration, Events);

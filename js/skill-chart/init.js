@@ -14,7 +14,7 @@
     var skillData = Transform.skillData(data, categoryData);
     
     // Run chart functions
-    BubbleChart.init(categoryData);
+    BubbleChart.init(categoryData, skillData);
     
   }
   
